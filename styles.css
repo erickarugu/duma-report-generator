@@ -1,0 +1,95 @@
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"; */
+ 
+*,*:before,*:after{
+  padding: 0;margin: 0;
+  box-sizing: border-box;
+}
+body{
+  position: relative;
+  font-size: 1.1rem;
+  background-image: url("./duma_ad_2.jpg");
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: overlay;
+  background-position: top;
+  background-size: cover;
+  min-height: 100vh;
+}
+::-webkit-scrollbar{width:4px;border-left:1px solid rgba(34, 79, 170, 0);}
+::-webkit-scrollbar-thumb{background-color:orange;}
+.navbar{
+  background-color: orange;
+}
+.card{
+  height: 100%;
+}
+.card{
+  background: url("./duma_logo.png");
+  background-color: rgba(255, 255, 255, 0.95);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+}
+ .filename{
+  padding: 1rem 0;
+  width: 100%;
+ /* max-width: 700px; */
+  /* border: 1px solid orange; */
+  margin-right: auto;
+  margin-left: auto;
+}
+ .filename #filename{
+font-size: 1rem;
+}
+ .filename p span{
+  color: orange;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+ #drop-area{
+position: relative;
+ width: 100%;
+ height: 200px;
+ font-size: 1.2rem;
+ font-weight: light;
+ background-image: url("./duma_ad_1.jpg");
+ background-color: rgba(38, 44, 15, 1);
+ background-blend-mode: overlay;
+  background-position: top;
+  background-size: cover;
+ border: 1px dashed orange;
+ border-radius: 5px;
+ cursor: pointer;
+}
+ #drop-area span{
+  margin-bottom: 2rem;
+  color: white;
+}
+ #drop-area input{
+  position: absolute;
+  width: 100%;
+  height: 200px;
+cursor: pointer;
+  opacity: 0;
+}
+#progress{
+  color: orange;
+}
+.flex{
+ display: flex;
+}
+.flex-col{
+  flex-direction: column;
+}
+.jc-c{
+  justify-content: center;
+}
+.al-c{
+  align-items: center;
+}
+.footer{
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: transparent;
+}
