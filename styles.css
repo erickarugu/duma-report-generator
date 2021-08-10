@@ -19,6 +19,9 @@ body{
 .navbar{
   background-color: orange;
 }
+.navbar.is-transparent .navbar-menu{
+  background: transparent;
+}
 .card{
   height: 100%;
 }
@@ -87,9 +90,5 @@ cursor: pointer;
   align-items: center;
 }
 .footer{
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, 0%);
   background: transparent;
 }
