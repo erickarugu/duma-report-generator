@@ -13,102 +13,105 @@
 </head>
 
 <body>
-  <nav class="navbar is-transparent px-4 pt-4">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <h1 class="has-text-weight-bold is-size-4">duma</h1>
-      </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="bd-tw-button button is-dark is-outlined is-button-small" href="https://billing.dumatel.com/" target="_blank">
-                <span class="icon">
-                  <i class="fa fa-arrow-up"></i>
-                </span>
-                <span> Splynx </span>
-              </a>
-            </p>
+  <div id="app">
+    <nav class="navbar is-transparent px-4 pt-4">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <h1 class="has-text-weight-bold is-size-4">duma</h1>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="bd-tw-button button is-dark is-outlined is-button-small" href="https://billing.dumatel.com/" target="_blank">
+                  <span class="icon">
+                    <i class="fa fa-arrow-up"></i>
+                  </span>
+                  <span> Splynx </span>
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <section class="is-section mt-5">
-    <div class="container px-3">
-      <div class="columns">
+    </nav>
+    <section class="is-section mt-5">
+      <div class="container px-3">
+        <div class="columns">
 
-        <div class="column">
-          <div class="card mx-auto my-2 p-3">
-            <ul style="list-style: circle" class="ml-4">
-              <li>
-                <small>
-                  Ensure all demo accounts and irrelevant rows are removed.
-                </small>
-              </li>
-              <li>
-                <small>
-                  The first row should have the column titles, not the general Splynx title.
-                </small>
-              </li>
-              <li>
-                <small>
-                  <b>NB:</b> Styles and spaces are not applied to the generated excel file sheets.
-                </small>
-              </li>
-            </ul>
+          <div class="column">
+            <div class="card mx-auto my-2 p-3">
+              <ul style="list-style: circle" class="ml-4">
+                <li>
+                  <small>
+                    Ensure all demo accounts and irrelevant rows are removed.
+                  </small>
+                </li>
+                <li>
+                  <small>
+                    The first row should have the column titles, not the general Splynx title.
+                  </small>
+                </li>
+                <li>
+                  <small>
+                    <b>NB:</b> Styles and spaces are not applied to the generated excel file sheets.
+                  </small>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card mx-auto my-2 p-3">
+              <ul style="list-style: circle" class="ml-4">
+                <li>
+                  <small>
+                    <b>NB:</b> The Daily Report sheet is not populated. Maybe in future updates.
+                  </small>
+                </li>
+                <li>
+                  <small>This is a helper tool; it is not a report-generation substitute.</small>
+                </li>
+                <li><small>All the best 👍👍👍</small></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="column">
-          <div class="card mx-auto my-2 p-3">
-            <ul style="list-style: circle" class="ml-4">
-              <li>
-                <small>
-                  <b>NB:</b> The Daily Report sheet is not populated. Maybe in future updates.
-                </small>
-              </li>
-              <li>
-                <small>This is a helper tool; it is not a report-generetion substitute.</small>
-              </li>
-              <li><small>Good Luck! You will definitely need it!😄😄</small></li>
-            </ul>
-          </div>
+        <div id="drop-area" class="container flex flex-col jc-c al-c has-text-white mt-4 px-2">
+          <span><i class="fa fa-2x fa-upload"></i></span>
+          <p><b>Click</b> or <b>Drag and Drop</b> today's Splynx Excel file here...</p>
+          <input type="file" id="drop-field">
+        </div>
+        <div class="filename has-text-white">
+          <p>Uploaded file Information :</p>
+          <div id="filename"></div>
         </div>
       </div>
-      <div id="drop-area" class="container flex flex-col jc-c al-c has-text-white mt-4 px-2">
-        <span><i class="fa fa-2x fa-upload"></i></span>
-        <p><b>Click</b> or <b>Drag and Drop</b> today's Splynx Excel file here...</p>
-        <input type="file" id="drop-field">
+    </section>
+    <section class="is-section mt-5">
+      <div class="container has-text-centered has-text-warning">
+        <p id="progress" class="my-4"></p>
+        <button id="saveBtn" class="button is-primary" disabled>Download Report <span class="ml-2"><i class="fa fa-download"></i></span></button>
       </div>
-      <div class="filename has-text-white">
-        <p>Uploaded file Information :</p>
-        <div id="filename"></div>
+    </section>
+    <footer class="footer mb-0 pb-0 mt-5">
+      <div class="content has-text-centered has-text-warning pb-0 mt-5">
+        <p><small>
+            <i>
+              Be nice, always.
+              <i class="fa fa-smile"></i>
+            </i>
+          </small>
+        </p>
       </div>
-    </div>
-  </section>
-  <section class="is-section mt-5">
-    <div class="container has-text-centered has-text-warning">
-      <p id="progress" class="my-4"></p>
-      <button id="saveBtn" class="button is-primary" disabled>Download Report <span class="ml-2"><i class="fa fa-download"></i></span></button>
-    </div>
-  </section>
-  <footer class="footer mb-0 pb-0 mt-5">
-    <div class="content has-text-centered has-text-warning pb-0 mt-5">
-      <p><small>
-          <i>
-            Designed and Coded with 💜 by <a href="https://erickarugu.com" class="has-text-success" target="_blank" title="Visit Eric Karugu's online profile">Eric Karugu</a>
-          </i>
-        </small>
-      </p>
-    </div>
-  </footer>
+    </footer>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Get all "navbar-burger" elements

@@ -19,6 +19,11 @@ body{
 .navbar{
   background-color: orange;
 }
+#app{
+  max-width: 2600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .navbar.is-transparent .navbar-menu{
   background: transparent;
 }
